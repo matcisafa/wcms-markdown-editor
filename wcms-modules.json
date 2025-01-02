@@ -3,11 +3,11 @@
     "plugins": {
         "wcms-markdown-editor": {
             "name": "Markdown Editor with LaTeX",
-            "repo": "https://github.com/amoreno-05/wcms-markdown-editor/tree/master",
-            "zip": "https://github.com/amoreno-05/wcms-markdown-editor/archive/master.zip",
+            "repo": "https://github.com/matcisafa/wcms-markdown-editor/tree/master",
+            "zip": "https://github.com/matcisafa/wcms-markdown-editor/archive/master.zip",
             "summary": "A Markdown editor with LaTeX support for WonderCMS",
             "version": "1.0.0",
-            "image": "https://raw.githubusercontent.com/amoreno-05/wcms-markdown-editor/master/preview.png"
+            "image": "https://raw.githubusercontent.com/matcisafa/wcms-markdown-editor/master/preview.png"
         }
     }
 }
