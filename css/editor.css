@@ -1,0 +1,28 @@
+.CodeMirror {
+    height: auto;
+    min-height: 300px;
+    border: 1px solid #ddd;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.CodeMirror-focused {
+    border-color: #007bff;
+}
+
+.markdown-preview {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.CodeMirror-linenumbers {
+    padding: 0 8px;
+}
+
+.CodeMirror pre {
+    padding: 0 4px;
+}
