@@ -18,3 +18,6 @@ You can write Markdown content and LaTeX formulas:
 
 Inline formula: `$E = mc^2$`
 Display formula:
+$$
+\frac{d}{dx}e^x = e^x
+$$
