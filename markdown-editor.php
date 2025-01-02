@@ -22,9 +22,25 @@ function loadMarkdownEditorJS($args) {
     global $Wcms;
     if ($Wcms->loggedIn) {
         $script = <<<EOT
+        <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$','$'], ['\\\\(','\\\\)']],
+                displayMath: [['$$','$$'], ['\\\\[','\\\\]']],
+                processEscapes: true
+            },
+            startup: {
+                ready: () => {
+                    MathJax.startup.defaultReady();
+                }
+            }
+        };
+        </script>
+        <script type="text/javascript" id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/markdown/markdown.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 EOT;
         $script .= '<script>' . file_get_contents(__DIR__ . '/js/editor.js') . '</script>';
         $args[0] .= $script;
