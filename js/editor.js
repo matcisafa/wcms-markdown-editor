@@ -3,15 +3,6 @@
         let editors = {};
         let timeoutSave = null;
 
-        // MathJax konfigürasyonu
-        window.MathJax = {
-            tex2jax: {
-                inlineMath: [['$','$'], ['\\(','\\)']],
-                displayMath: [['$$','$$'], ['\\[','\\]']],
-                processEscapes: true
-            }
-        };
-
         // Her markdown-editor class'ına sahip element için CodeMirror editörü oluştur
         document.querySelectorAll('.markdown-editor').forEach(function(element) {
             let editor = CodeMirror.fromTextArea(element, {
@@ -28,11 +19,11 @@
                 let content = editor.getValue();
                 timeoutSave = setTimeout(function() {
                     saveContent(element.id, content);
+                    // MathJax'i yeniden işle
+                    if (window.MathJax) {
+                        MathJax.typesetPromise && MathJax.typesetPromise();
+                    }
                 }, 1000);
-
-                if (typeof MathJax !== 'undefined') {
-                    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
-                }
             });
 
             editors[element.id] = editor;
